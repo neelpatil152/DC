@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Template Mo">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>Dchronicles Explication International Pvt. Ltd</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/lightbox.css">
+   
+    <style>
+
+ul.nav {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.nav li {
+  position: relative;
+}
+
+ul.nav li a {
+  display: block;
+  padding:2px 5px;
+  text-decoration: none;
+  color: #000;
+}
+
+
+
+ul.nav .dropdown-menu {
+  display: none;
+  
+  top: 100%;
+  left: 0;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+ul.nav .nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+      /* Style for the dropdown container */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      /* Style for the search input */
+      .dropdown input {
+        box-sizing: border-box;
+        padding: 10px;
+        width: 100%;
+        font-size: 16px;
+      }
+
+      /* Style for the dropdown content */
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 100%;
+        max-height: 200px;
+        overflow-y: auto;
+        border: 1px solid #ccc;
+        z-index: 1;
+      }
+
+      /* Style for the options */
+      .dropdown-content option {
+        padding: 10px;
+        cursor: pointer;
+      }
+
+      /* Highlighting options on hover */
+      .dropdown-content option:hover {
+        background-color: #ddd;
+      }
+    </style> 
+
+  </head>
+
+<body>
+    <div class="" id="1blog">
+        <div class="meeting-item">
+          <div class="thumb">
+            <img src="image/cloudcomputing.webp" alt="">
+          </div>
+          <div class="down-content">
+            <div class="date">
+              <h6><span></span></h6>
+            </div>
+            <a href="contact.html"><h4>Embracing Cloud Computing</h4></a>
+            <p>Cloud computing is not just a passing trend; it has become the foundation upon which modern IT infrastructure is built. As businesses increasingly seek agility, scalability, and cost-efficiency, cloud computing has emerged as the key solution to meet these demands. At [Your Company Name], we have been at the forefront of this technological revolution, guiding businesses through their digital transformation journeys.</p><br>
+
+               <p> Our expertise in cloud adoption allows us to offer a comprehensive range of services that cater to businesses of all sizes and industries. Whether you are a small startup looking to leverage cloud storage or a large enterprise in need of advanced cloud-based applications, we provide solutions that are tailored to your specific needs. Our cloud services are designed to be scalable, ensuring that as your business grows, your IT infrastructure can seamlessly expand without the need for significant capital investment.</p><br>
+                
+                <p> Security is a paramount concern in the digital age, and our cloud solutions are built with this in mind. We implement robust security measures to protect your data, ensuring compliance with industry standards and regulations. From encryption to regular security audits, we ensure that your cloud environment is safe from potential threats.</p><br>
+                
+                    <p>  Moreover, our cloud solutions are cost-effective, allowing businesses to reduce their IT expenses significantly. By moving to the cloud, companies can avoid the high costs associated with maintaining physical servers and other hardware, while only paying for the resources they actually use.</p><br>
+                
+                <p> Our team of experts ensures a smooth migration to the cloud, minimizing downtime and disruption to your operations. We work closely with your team to plan, execute, and manage the transition, providing ongoing support to ensure that your business continues to operate efficiently in its new cloud environment.</p><br>
+                
+                    <p>In addition to these benefits, cloud computing offers unparalleled flexibility. It enables your workforce to access critical business applications and data from anywhere, at any time, using any device. This level of accessibility supports remote work and enhances collaboration across teams, driving productivity and innovation within your organization.</p><br>
+                
+                        <p> By partnering with [Your Company Name], you are not just adopting a new technology; you are embracing a future-ready solution that positions your business for long-term success. We are committed to helping our clients navigate the complexities of cloud computing, ensuring that they fully realize the benefits of this transformative technology.</p><br><br>
+          </div>
+        </div>
+      </div>
+
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/blogscript.js"></script>
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/lightbox.js"></script>
+    <script src="assets/js/tabs.js"></script>
+    <script src="assets/js/isotope.js"></script>
+    <script src="assets/js/video.js"></script>
+    <script src="assets/js/slick-slider.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script>
+        //according to loftblog tut
+        $('.nav li:first').addClass('active');
+
+        var showSection = function showSection(section, isAnimate) {
+          var
+          direction = section.replace(/#/, ''),
+          reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+          reqSectionPos = reqSection.offset().top - 0;
+
+          if (isAnimate) {
+            $('body, html').animate({
+              scrollTop: reqSectionPos },
+            800);
+          } else {
+            $('body, html').scrollTop(reqSectionPos);
+          }
+
+        };
+
+        var checkSection = function checkSection() {
+          $('.section').each(function () {
+            var
+            $this = $(this),
+            topEdge = $this.offset().top - 80,
+            bottomEdge = topEdge + $this.height(),
+            wScroll = $(window).scrollTop();
+            if (topEdge < wScroll && bottomEdge > wScroll) {
+              var
+              currentId = $this.data('section'),
+              reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+              reqLink.closest('li').addClass('active').
+              siblings().removeClass('active');
+            }
+          });
+        };
+
+        $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
+          e.preventDefault();
+          showSection($(this).attr('href'), true);
+        });
+
+        $(window).scroll(function () {
+          checkSection();
+        });
+
+
+
+
+
+
+
+        function showPopup(blogId, imageSrc, title, description) {
+    const popup = document.getElementById('popup');
+    const popupImage = document.getElementById('popup-image');
+    const popupTitle = document.getElementById('popup-title');
+    const popupDescription = document.getElementById('popup-description');
+
+    popupImage.src = imageSrc;
+    popupTitle.textContent = title;
+    popupDescription.textContent = description;
+
+    popup.style.display = 'flex';
+}
+
+function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const blogLine = document.querySelector('.blog-line');
+    let scrollAmount = 0;
+
+    setInterval(() => {
+        scrollAmount += 310; // Adjust based on the width of each blog box + margin
+        if (scrollAmount >= blogLine.scrollWidth) {
+            scrollAmount = 0;
+        }
+        blogLine.scrollTo({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+    }, 3000); // Adjust the interval time as needed
+});
+
+
+function openForm() {
+    document.getElementById('formPopup').style.display = 'flex';
+}
+
+function closeForm() {
+    document.getElementById('formPopup').style.display = 'none';
+}
+
+document.getElementById('blogForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const title = document.getElementById('title').value;
+    const image = document.getElementById('image').value;
+    const description = document.getElementById('description').value;
+    const date = document.getElementById('date').value;
+    const time = document.getElementById('time').value;
+
+    const blogLine = document.querySelector('.blog-line');
+    
+    const blogBox = document.createElement('div');
+    blogBox.classList.add('blog-box');
+    
+    blogBox.innerHTML = `
+        <img src="${image}" alt="${title}">
+        <div class="info">
+            <h3>${title}</h3>
+            <p>${description}</p>
+            <small>By ${name} on ${date} at ${time}</small>
+        </div>
+    `;
+
+    blogLine.appendChild(blogBox);
+
+    closeForm();
+});
+
+    </script>
+</body>
+
+
+  </body>
+
+</html>

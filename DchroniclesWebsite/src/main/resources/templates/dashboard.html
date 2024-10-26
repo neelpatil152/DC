@@ -1,0 +1,227 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+        * { font-family: "Ubuntu", sans-serif; margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --blue: #2a2185; --white: #fff; --gray: #f5f5f5; --black1: #222; --hover-blue: #3a35a3; }
+        body { min-height: 100vh; background-color: var(--gray); }
+        .container { position: relative; width: 100%; max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .navigation { width: 250px; height: 100%; background: var(--blue); padding: 15px; color: var(--white); position: fixed; top: 0; left: 0; }
+        .navigation ul { list-style-type: none; }
+        .navigation ul li { padding: 10px 0; cursor: pointer; }
+        .navigation ul li a { color: var(--white); text-decoration: none; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; }
+        .navigation ul li:hover { background-color: var(--hover-blue); color: var(--white); }
+        .main { margin-left: 270px; padding: 20px; background: var(--white); min-height: 100vh; }
+        .tab { overflow: hidden; border-bottom: 1px solid #ccc; }
+        .tab button { background-color: inherit; float: left; border: none; cursor: pointer; padding: 14px 16px; font-size: 17px; color: var(--blue); }
+        .tab button:hover { background-color: var(--hover-blue); color: var(--white); }
+        .tab button.active { background-color: var(--blue); color: var(--white); }
+        .tabcontent { display: none; padding: 20px; border: 1px solid #ccc; border-top: none; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        table, th, td { border: 1px solid var(--black1); }
+        th, td { padding: 10px; text-align: left; }
+        th { background-color: var(--blue); color: var(--white); }
+        .btn { background-color: var(--blue); color: var(--white); border: none; padding: 5px 10px; cursor: pointer; border-radius: 4px; }
+        .btn:hover { background-color: var(--white); color: var(--blue); border: 1px solid var(--blue); }
+    </style>
+</head>
+<body>
+    <div class="navigation">
+        <ul>
+            <li><a href="#" onclick="openTab(event, 'Contact')">Contact Us Data</a></li>
+            <li><a href="#" onclick="openTab(event, 'ApplyNow')">ApplyNow Data</a></li>
+            <li><a href="#" onclick="openTab(event, 'Enquiry')">Enquiry Form Data</a></li>
+            <li><a href="#" onclick="openTab(event, 'Vendor')">Vendor Form Data</a></li>
+           </ul>
+    </div>
+
+    <div class="main">
+        <!-- Contact Us Data -->
+        <div id="Contact" class="tabcontent">
+            <h2>Contact Us Form Data</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th> Name</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
+                       
+                        <th>Message</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="contact : ${contactUsList}">
+                        <td th:text="${contact.id}"></td>
+                        <td th:text="${contact.name}"></td>
+                        <td th:text="${contact.email}"></td>
+                        <td th:text="${contact.phoneNumber}"></td>
+                        <td th:text="${contact.message}"></td>
+                        <td>
+                            <a th:href="@{/admin/update/{id}(id=${contact.id})}">Update</a>
+                            <form th:action="@{/admin/delete/contact/{id}(id=${contact.id})}" method="post" style="display:inline;">
+                                <button type="submit" class="btn">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+<div id="ApplyNow" class="tabcontent">
+    <h2>ApplyNow Data</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Full Name</th>
+               
+                <th>Email</th>
+                <th>Contact Number</th>
+                 <th>Position Applied for </th>
+                  <th>Experience</th>
+                   <th>Education</th>
+                   <th>Course Name</th>
+                    <th>Cover Letter</th>
+                <th>Resume</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+           <tr th:each="join : ${ApplyNowList}">
+    <td th:text="${join.id}"></td>
+    <td th:text="${join.fullName}"></td>
+    
+    <td th:text="${join.email}"></td>
+    <td th:text="${join.phoneNumber}"></td>
+    <td th:text="${join.positionAppliedFor}"></td>
+    <td th:text="${join.yearsOfExperience}"></td>
+    <td th:text="${join.highestLevelOfEducation}"></td>
+    <td th:text="${join.courseName}"></td>
+    <td th:text="${join.coverLetter}"></td>
+    <td>
+                    <a th:href="${join.resume}" target="_blank">View Resume</a> <!-- Use the Firebase link directly -->
+                </td>
+    <td>
+        <form th:action="@{/admin/delete/join/{id}(id=${join.id})}" method="post" style="display:inline;">
+            <button type="submit" class="btn">Delete</button>
+        </form>
+    </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ <!-- Enquiry Data Section -->
+<div id="Enquiry" class="tabcontent">
+    <h2>Enquiry Data</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Contact Number</th>
+                <th>Course Name</th>
+                <th>Education</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="enquiry : ${EnquiryList}">
+                <td th:text="${enquiry.id}"></td>
+                <td th:text="${enquiry.fullName}"></td>
+                <td th:text="${enquiry.email}"></td>
+                <td th:text="${enquiry.phoneNumber}"></td>
+                <td th:text="${enquiry.course}"></td>
+                <td th:text="${enquiry.highestLevelOfEducation}"></td>
+                <td>
+                   <form th:action="@{/admin/delete/enquiry/{id}(id=${enquiry.id})}" method="post" style="display:inline;">
+            <button type="submit" class="btn">Delete</button>
+        </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Vendor Data Section -->
+<div id="Vendor" class="tabcontent">
+    <h2>Vendor Data</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Company Name</th>
+                <th>Website</th>
+                <th>Contact Number</th>
+                <th>Country</th>
+                <th>Address</th>
+                <th>District</th>
+                <th>Postal Code</th>
+                <th>Company ID</th>
+                <th>Document</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="vendor : ${VendorList}">
+                <td th:text="${vendor.id}"></td>
+                <td th:text="${vendor.companyName}"></td>
+                <td th:text="${vendor.companyWebsite}"></td>
+                <td th:text="${vendor.phoneNumber}"></td>
+                <td th:text="${vendor.country}"></td>
+                <td th:text="${vendor.address}"></td>
+                <td th:text="${vendor.district}"></td>
+                <td th:text="${vendor.postalCode}"></td>
+                <td th:text="${vendor.companyId}"></td>
+                <td>
+                    <a th:href="${vendor.uploadDocument}" target="_blank">View Document</a>
+                </td>
+                <td>
+                    <form th:action="@{/admin/delete/vendor/{id}(id=${vendor.id})}" method="post" style="display:inline;">
+            <button type="submit" class="btn">Delete</button>
+        </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+ 
+        </tbody>
+    </table>
+</div>
+
+
+
+          <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";  
+            }
+            tablinks = document.getElementsByTagName("button");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";  
+            evt.currentTarget.className += " active";
+        }
+
+        // Open default tab
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector(".tabcontent").style.display = "block"; // Show first tab
+            document.querySelector(".navigation a").click(); // Activate first tab
+        });
+    </script>
+</body>
+</html>
+ 

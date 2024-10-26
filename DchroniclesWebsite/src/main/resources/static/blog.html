@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Template Mo">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>Dchronicles Explication International Pvt. Ltd</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/lightbox.css">
+    <style>
+
+ul.nav {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.nav li {
+  position: relative;
+}
+
+ul.nav li a {
+  display: block;
+  padding:2px 5px;
+  text-decoration: none;
+  color: #000;
+}
+
+
+
+ul.nav .dropdown-menu {
+  display: none;
+  
+  top: 100%;
+  left: 0;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+ul.nav .nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+      .services .service-item {
+        background-color: white;
+        text-align: center;
+        border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+        padding: 80px 20px;
+        transition: border ease-in-out 0.3s;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 20px;
+         /* Adds shadow to text for better readability */
+
+      }
+
+      .services .service-item .icon {
+        margin: 0 auto;
+        width: 64px;
+        height: 64px;
+        background: var(--accent-color);
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        transition: 0.3s;
+        z-index: 2;
+      }
+
+      .services .service-item .icon i {
+        color: var(--contrast-color);
+        font-size: 28px;
+        transition: ease-in-out 0.3s;
+        z-index: 2;
+      }
+
+      .services .service-item h3 {
+        font-weight: 700;
+        margin: 10px 0 15px 0;
+        font-size: 22px;
+        transition: 0.3s;
+        z-index: 2;
+      }
+
+      .services .service-item p {
+        line-height: 24px;
+        font-size: 14px;
+        margin-bottom: 0;
+        z-index: 2;
+        
+      }
+
+      .services .service-item:hover {
+        border-color: var(--accent-color);
+      }
+
+      .services .service-item:hover h3 {
+        color: var(--accent-color);
+      }
+
+      .modal .modal-cardio {
+        margin-top: 200px;
+      }
+      .service-item h3,
+.service-item p,
+.service-item .open-modal-btn {
+  position: relative;
+  z-index: 2; /* Ensures text and buttons are above the overlay */
+}
+      .services .service-item.modal-ortho {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 400px;
+        margin-top: 200px;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        /* Optional: Adds a background overlay */
+        z-index: 2;
+        /* Ensures the modal is on top of other elements */
+      }
+      
+      .service-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5); /* Darkens the background image for better text visibility */
+  z-index: 1; /* Ensures the overlay is above the background but below the text */
+}
+
+
+      .modal-content {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        width: 1000px;
+     margin-top: 90px;
+        /* Adjust as needed */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+        /* Required to position the close button */
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Style for the close button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+.modal-iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+}
+
+/* Responsive design for different screen sizes */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 90%;
+    margin: 20% auto;
+  }
+
+  .modal-iframe {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    width: 95%;
+    margin: 25% auto;
+  }
+
+  .modal-iframe {
+    height: 250px;
+  }
+}
+      
+</style>
+    
+
+  </head>
+
+<body>
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+      <div class="container">
+          <div class="row">
+              <div class="col-12" style="padding: 0;">
+                  <nav class="main-nav" style="margin-left: 0%; margin-right: 0px;" >
+                      <!-- ***** Logo Start ***** -->
+                    <!-- ***** Logo Start ***** -->
+                    <a href="index.html" class="logo">
+                      <img src="assets\images\DC.png" style="width:220px;">
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                      <li class=""><a href="index.html">Home</a></li>
+                      <li class=""><a href="Aboutus.html">About Us</a></li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Services
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="hardware.html">Hardware</a></li>
+                          <li><a class="dropdown-item" href="software.html">Software</a></li>
+                          <li><a class="dropdown-item" href="training&placement.html">Training & Placement</a></li>
+                           <!--<li><a class="dropdown-item" href="recruitment.html">Recruitment</a></li>-->
+                        </ul>
+                      </li>
+                      <li class=""><a th:href="@{/apply}">Apply Now</a></li>
+                      <li class=""><a th:href="@{/vendor}">Vendor</a></li>
+                      <li class=""><a href="blog.html">Blog</a></li>
+                      <li class=""><a href="contact.html">Contact Us</a></li>      
+                    </ul>
+                    
+        
+                    <a class="menu-trigger">
+                      <span>Menu</span>
+                    </a>
+                  <!-- ***** Menu End ***** -->
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+
+  <section class="heading-page header-text" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h6></h6>
+          <h2>Blogs</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+<section class="contact-us services" id="contact">
+  <div class="container">
+    <br>
+    <br>
+    <br>
+    <div class="row gy-4">
+
+      
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-item position-relative" style="background-image: url('./image/cloudcomputing.webp'); background-size: cover; background-position: center;">
+          <div class="overlay"></div>
+
+          <h3>Embracing Cloud Computing</h3>
+          <p>Cloud computing is no longer a trend; it’s the backbone of modern IT infrastructure. Our company has been at the forefront of cloud adoption, offering scalable, secure, and cost-effective solutions to businesses of all sizes. From cloud storage to advanced cloud-based applications, we help our clients migrate to the cloud seamlessly, ensuring they reap the benefits of flexibility and agility.
+          </p>
+
+          <!-- Button to open the modal -->
+          <button class="open-modal-btn" data-modal="modal-md" class="btn custom-button">View More</button>
+
+          <!-- Modal HTML (hidden by default) -->
+          <center>  <div class="modal modal-md">
+            <div class="modal-content">
+              <span class="close-btn">&times;</span>
+              <h2>Embracing Cloud Computing</h2>
+              <iframe src="Embracing Cloud Computing.html #1blog" style="width:100%; height:400px; border:none;"></iframe>
+            </div>
+          </div>
+        </div>
+      </div><!-- End Service Item --> </center>
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-item position-relative" style="background-image: url('./image/pngtree-evolution-of-artificial-intelligence\ n\ machine-learning.png'); background-size: cover; background-position: center;">
+          <div class="overlay"></div>
+
+          <h3>Harnessing the Power of AI and Machine Learning</h3>
+          <p>Artificial Intelligence (AI) and Machine Learning (ML) are revolutionizing the way businesses analyze data, make decisions, and interact with customers. At [Your IT Company Name], we are integrating AI and ML into our service offerings, enabling our clients to unlock new insights, automate routine tasks, and deliver personalized customer experiences.
+          </p>
+
+          <!-- Button to open the modal -->
+          <button class="open-modal-btn" data-modal="modal-cardio" class="btn custom-button">View More</button>
+
+          <!-- Modal HTML (hidden by default) -->
+          <center>
+            <div class="modal modal-cardio">
+              <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Harnessing the Power of AI and Machine Learning</h2>
+                <iframe src="Harnessing the Power of AI and Machine Learning.html" style="width:100%; height:400px; border:none;"></iframe>
+              </div>
+            </div>
+        </div>
+      </div><!-- End Service Item --></center>
+
+
+    
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-item position-relative" style="background-image: url('./image/cyber-security.jpg'); background-size: cover; background-position: center;">
+          <div class="overlay"></div>
+
+          <h3>Strengthening Cybersecurity Measures</h3>
+          <p>
+            As cyber threats become more sophisticated, cybersecurity is a top priority for businesses. Our company is committed to protecting our clients' data and systems through state-of-the-art security solutions. We offer comprehensive cybersecurity services, including threat detection, incident response, and ongoing monitoring, to ensure our clients’ IT environments remain secure.
+</p>
+
+          <!-- Button to open the modal -->
+          <button class="open-modal-btn" data-modal="modal-ortho" class="btn custom-button">View More</button>
+
+          <center><!-- Modal HTML (hidden by default) -->
+          <div class="modal modal-ortho">
+            <div class="modal-content">
+              <span class="close-btn">&times;</span>
+              <h2>Strengthening Cybersecurity Measures</h2>
+              <iframe src="Strengthening Cybersecurity Measures.html" style="width:100%; height:400px; border:none;"></iframe>
+            </div>
+          </div>
+        </div>
+      </div><!-- End Service Item --> </center>
+    </div>
+
+  </div>
+    </div>
+    
+
+    <div class="footer" id="footer">
+      <div class="top-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-3 col-md-3 col-lg-3">
+              <h3>About Us</h3>
+              <p id="footerinfo">Incorporated in the year 2022, Dchronicles- an IT Company provides End - End IT solutions and consulting in Pune India. In the last two decades Dchronicles has become a market leader with its committed, experienced and knowledgeable team which always provided the best and latest technology products and solutions.</p>
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3">
+              <ul>
+                <li><h3>Our Services</h3></li>
+                <li><a href="hardware.html">Hardware</a></li>
+                <li><a href="software.html">Software</a></li>
+                <li><a href="training&placement.html">Training & Placement</a></li>
+                <li><a href="recruitment.html">Recruitment</a></li>
+              
+              </ul>
+            
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3">
+              <ul>
+                <li><h3>Quick Links</h3></li>
+                <li><a href="Aboutus.html">About Us</a></li>
+                <li><a th:href="@{/apply}">Apply</a></li>
+                <li><a th:href="@{/vendor}">Vendor</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-3 col-md-3">
+              <ul>
+              <li><h3>Connect with us Socially</h3></li>
+              </ul>
+               <div class="footerdown-icons"></div>
+                <ul>
+                <li><a href="https://www.facebook.com/profile.php?id=61564010036688&mibextid=ZbWKwL"><i class="fa fa-facebook"></i>&nbsp;&nbsp;Facebook</a></li>
+                <li><a href="https://www.instagram.com/dchronicle_expliction?igsh=MTBvb3BxMjZpbDdkZQ=="><i class="fa fa-instagram"></i>&nbsp;&nbsp;Instagram</a></li>
+                <li><a href="https://www.linkedin.com/company/dchronicles/"><i class="fa fa-linkedin"></i>&nbsp;&nbsp;Linkedin</a></li>
+                <li><a href="https://x.com/Dchronicles_?t=8hBNRlpgtRcj_YPzIgy7PQ&s=08"><i class="fa fa-twitter"></i>&nbsp;&nbsp;Twitter</a></li>
+              </ul>
+              </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    <div class="footer">
+      <p class="copyrightline">Copyright © 2024 Dchronicles Pvt. Ltd. All Rights Reserved. 
+       
+    </div>
+</div>
+  </section>
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/blogscript.js"></script>
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/lightbox.js"></script>
+    <script src="assets/js/tabs.js"></script>
+    <script src="assets/js/isotope.js"></script>
+    <script src="assets/js/video.js"></script>
+    <script src="assets/js/slick-slider.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/bloginfo.js"></script>
+    <script>
+        //according to loftblog tut
+        $('.nav li:first').addClass('active');
+
+        var showSection = function showSection(section, isAnimate) {
+          var
+          direction = section.replace(/#/, ''),
+          reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+          reqSectionPos = reqSection.offset().top - 0;
+
+          if (isAnimate) {
+            $('body, html').animate({
+              scrollTop: reqSectionPos },
+            800);
+          } else {
+            $('body, html').scrollTop(reqSectionPos);
+          }
+
+        };
+
+        var checkSection = function checkSection() {
+          $('.section').each(function () {
+            var
+            $this = $(this),
+            topEdge = $this.offset().top - 80,
+            bottomEdge = topEdge + $this.height(),
+            wScroll = $(window).scrollTop();
+            if (topEdge < wScroll && bottomEdge > wScroll) {
+              var
+              currentId = $this.data('section'),
+              reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+              reqLink.closest('li').addClass('active').
+              siblings().removeClass('active');
+            }
+          });
+        };
+        $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
+          e.preventDefault();
+          showSection($(this).attr('href'), true);
+        });
+  $(window).scroll(function () {
+          checkSection();
+        });
+ </script>
+  </body></html>

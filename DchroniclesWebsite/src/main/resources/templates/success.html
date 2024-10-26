@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success</title>
+    <link rel="stylesheet" href="assets/css/styles.css"> 
+    <style>
+        /* General page styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Popup container */
+        .popup {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 10; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* Black overlay with transparency */
+        }
+
+        /* Popup content */
+        .popup-content {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+            margin: 10% auto;
+            position: relative;
+        }
+
+        .popup-content h1 {
+            color: #4CAF50;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .popup-content p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .close-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .close-btn:hover {
+            background-color: #45a049;
+        }
+
+        /* For smaller screens */
+        @media screen and (max-width: 600px) {
+            .popup-content {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Popup container -->
+    <div id="successPopup" class="popup">
+        <div class="popup-content">
+            <h1>Thank You!</h1>
+            <p>Thank you for submitting your enquiry. Our Executive will connect with you shortly.</p>
+            <button class="close-btn" onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to display the popup
+        function showPopup() {
+            document.getElementById("successPopup").style.display = "block";
+        }
+
+        // Function to close the popup
+        // Function to close the popup and redirect to the previous page
+function closePopup() {
+    // Hide the popup
+    document.getElementById("successPopup").style.display = "none";
+    
+    // Get the previous page URL from local storage
+    const previousPage = localStorage.getItem("previousPage");
+    
+    // Check if the previous page exists and redirect
+    if (previousPage) {
+        window.location.href = previousPage;
+    } else {
+        // If no previous page is found, reload the current page
+        window.history.back();  // Or you can use `window.location.reload();`
+    }
+}
+
+
+        // Automatically show the popup when the page loads
+        window.onload = function() {
+            showPopup();
+        }
+    </script>
+
+</body>
+</html>
+ 
