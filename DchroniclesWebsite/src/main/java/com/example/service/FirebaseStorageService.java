@@ -20,7 +20,7 @@ public class FirebaseStorageService {
 
     private final Storage storage;
     private final String bucketName = "dchronicles-1a08a.appspot.com"; // Your Firebase Storage bucket name
-/*
+
     public FirebaseStorageService() throws IOException {
         // Load the service account key
         try (FileInputStream serviceAccountStream = new FileInputStream("src/main/resources/lead.json")) {
@@ -32,23 +32,6 @@ public class FirebaseStorageService {
                     .getService();
         }
     }
-*/
-    public FirebaseStorageService() throws IOException {
-        // Load the service account key from the classpath
-        try (InputStream serviceAccountStream = getClass().getClassLoader().getResourceAsStream("lead.json")) {
-            if (serviceAccountStream == null) {
-                throw new FileNotFoundException("File lead.json not found in the classpath");
-            }
-            
-            // Initialize Firebase Storage with the service account credentials
-            this.storage = StorageOptions.newBuilder()
-                    .setCredentials(GoogleCredentials.fromStream(serviceAccountStream))
-                    .setProjectId("dchronicles-1a08a")
-                    .build()
-                    .getService();
-        }
-    }
-
     
     public String uploadFile(MultipartFile file, String folderName) throws IOException {
         // Generate a unique file name
