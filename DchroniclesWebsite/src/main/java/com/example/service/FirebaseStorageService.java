@@ -19,61 +19,37 @@ import java.util.UUID;
 public class FirebaseStorageService {
 
     private final Storage storage;
-    private final String bucketName = "dchronicles-1a08a.appspot.com"; // Your Firebase Storage bucket name
-/*
-    public FirebaseStorageService() throws IOException {
-        // Load the service account key
-        try (FileInputStream serviceAccountStream = new FileInputStream("src/main/resources/lead.json")) {
-            // Initialize Firebase Storage with the service account credentials
-            this.storage = StorageOptions.newBuilder()
-                    .setCredentials(GoogleCredentials.fromStream(serviceAccountStream))
-                    .setProjectId("dchronicles-1a08a") 
-                    .build()
-                    .getService();
-        }
-    }
-    */
+    private final String bucketName = "dchronicles-1a08a.appspot.com";
 
- public FirebaseStorageService() throws IOException {
-        // Load the service account key
+    public FirebaseStorageService() throws IOException {
         try (FileInputStream serviceAccountStream = new FileInputStream("src/main/resources/lead.json")) {
             this.storage = StorageOptions.newBuilder()
                     .setCredentials(GoogleCredentials.fromStream(serviceAccountStream))
                     .setProjectId("dchronicles-1a08a") 
                     .build()
                     .getService();
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException("Service account file not found. Check the path.", e);
         } catch (IOException e) {
             throw new RuntimeException("Error initializing Firebase Storage: " + e.getMessage(), e);
         }
     }
 
-    
     public String uploadFile(MultipartFile file, String folderName) throws IOException {
-        // Generate a unique file name
         String fileName = UUID.randomUUID().toString() + "-" + file.getOriginalFilename();
+        String fullPath = folderName + "/" + URLEncoder.encode(fileName, StandardCharsets.UTF_8.toString());
 
-        // Encode the file name to handle spaces and special characters
-        String encodedFileName = URLEncoder.encode(fileName, StandardCharsets.UTF_8.toString());
-
-        // Combine folder path and file name (e.g., "apply-now-resume/unique-filename.pdf" or "apply-now-cover-letter/unique-filename.pdf")
-        String fullPath = folderName + "/" + encodedFileName;
-
-        // Create a BlobInfo object to define the blob's metadata
         BlobInfo blobInfo = BlobInfo.newBuilder(bucketName, fullPath)
                 .setContentType(file.getContentType())
                 .build();
 
-        // Upload the file to Firebase Storage
-        storage.create(blobInfo, file.getBytes());
+        try {
+            storage.create(blobInfo, file.getBytes());
+        } catch (StorageException e) {
+            System.err.println("Failed to upload file: " + e.getMessage());
+            throw e; // Re-throw to handle it upstream
+        }
 
-        // Construct the public URL for the uploaded file
-        String publicUrl = String.format("https://firebasestorage.googleapis.com/v0/b/%s/o/%s?alt=media", 
-                                          bucketName, 
-                                          URLEncoder.encode(fullPath, StandardCharsets.UTF_8.toString()));
-
-        return publicUrl; // Return the public URL for the uploaded file
+        return String.format("https://firebasestorage.googleapis.com/v0/b/%s/o/%s?alt=media", 
+                              bucketName, 
+                              URLEncoder.encode(fullPath, StandardCharsets.UTF_8.toString()));
     }
-
 }
